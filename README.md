@@ -51,7 +51,7 @@ The provided API was built by a third party and somewhat strange behaviour has b
         
         heat loss (kWh) / heating degree days = Power heat loss (kW)
 
-3. Using the data in the heatPumpData.json file match a heat pump to the property using the property's calculated power heat loss and each heat pump's output capacity. Calculate the total cost for the heat pump installation - total costs should include 5% VAT.
+3. Using the data in the heat-pumps.json file match a heat pump to the property using the property's calculated power heat loss and each heat pump's output capacity. Calculate the total cost for the heat pump installation - total costs should include 5% VAT.
     *Note: the Heat Pump should **not be undersized**.*
 
 
