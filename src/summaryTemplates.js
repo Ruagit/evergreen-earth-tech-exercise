@@ -4,17 +4,17 @@ const outputSummaryTemplate = (submissionId, estimatedHeatLoss, designRegion, po
   console.log(submissionId);
   console.log('--------------------------------------');
   console.log(' ');
-  console.log(`  Estimated Heat Loss       = ${estimatedHeatLoss}`);
+  console.log(`  Estimated Heat Loss       = ${estimatedHeatLoss} kWh`);
   console.log(`  Design Region             = ${designRegion}`);
-  console.log(`  Power Heat Loss           = ${powerHeatLoss}`);
+  console.log(`  Power Heat Loss           = ${Number((powerHeatLoss).toFixed(2))} kW`);
   console.log(`  Recommended Heat Pump     = ${recommendedHeatPump.label}`);
   console.log('  Cost Breakdown');
   console.log(' ');
   for (const item of recommendedHeatPump.costs) {
-    console.log(`    ${item.label} ${item.cost}`);
+    console.log(`    ${item.label} - £${item.cost}`);
   }
   console.log(' ');
-  console.log(`  Total Cost, including VAT = ${totalCost}`);
+  console.log(`  Total Cost, including VAT = £${totalCost}`);
   console.log(' ');
 }
 

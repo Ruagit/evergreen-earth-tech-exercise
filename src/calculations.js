@@ -9,8 +9,7 @@ const heatLosskWh = (floorArea, heatingFactor, insulationFactor) => {
 
 const powerHeatLossKw = (heatLosskWhTotal, heatingDegreeDays) => { 
   //  heat loss (kWh) / heating degree days = Power heat loss (kW)
-
-  if(typeof heatLosskWh !== 'number' || typeof heatingDegreeDays !== 'number') {
+  if(typeof heatLosskWhTotal !== 'number' || typeof heatingDegreeDays !== 'number') {
     throw new Error("Invalid Power Heat Loss inputs: All parameters must be numbers." );
   }
 
@@ -39,7 +38,7 @@ const totalCost = (heatPump, vatRate) => {
   if (typeof heatPump !== 'object' || typeof vatRate !== 'number') {
     throw new Error("Invalid Cost inputs: All parameters must be valid types.");
   }
-  let grossCost;
+  let grossCost = 0;
 
   for (const item of heatPump.costs) {
      grossCost += item.cost;
