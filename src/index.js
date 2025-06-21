@@ -19,6 +19,7 @@ const executeSummary = async  () => {
   let heatLosskWhTotal;
  
     for(const house of housesData) { 
+      console.log("")
       console.log("Processing house:", house.submissionId);
       try {
       submissionId = house.submissionId;
@@ -30,12 +31,19 @@ const executeSummary = async  () => {
 
       outputSummaryTemplate(submissionId, heatLosskWhTotal, house.designRegion, powerHeatLossKwTotal, recommendedHeatPump, totalCostWithVat);
     } catch (error) {
-      errorSummaryTemplate(submissionId, heatLosskWhTotal, error.message);
 
-      console.log("Summary Completed with Errors for submissionId:", submissionId);
+    if(error.message === "Warning: Could not find design region") {
+      errorSummaryTemplate(submissionId, heatLosskWhTotal, error.message);
+    } else if (error.message === "Critical teapot error, please try coffee instead" ){
+      console.log(error.message);
+    } else {
+      console.log("")
+      console.log("Summary Completed with Errors for submissionId:", submissionId, error.message);
     }
   }
+  }
   console.log("Summary Complete...");
+  console.log("")
 
 }
 

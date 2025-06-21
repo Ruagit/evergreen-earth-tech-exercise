@@ -26,12 +26,21 @@ const heatPumpSelection = (powerHeatLossKwTotal, heatPumpOptions) => {
     throw new Error("Invalid Power Heat Loss input: Must be a number.");
   }
 
+  let bestFit = null;
+
   for (const heatPump of heatPumpOptions) {
     if (heatPump.outputCapacity >= powerHeatLossKwTotal) {
-      return heatPump;
+      if (!bestFit || heatPump.outputCapacity < bestFit.outputCapacity) {
+        bestFit = heatPump;
+      }
     }
   }
-  throw new Error ("No suitable heat pump found for the given power heat loss.");
+
+  if (!bestFit) {
+    throw new Error("No suitable heat pump found for the given power heat loss.");
+  }
+
+  return bestFit;
 }
 
 const totalCost = (heatPump, vatRate) => {
