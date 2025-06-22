@@ -4,7 +4,8 @@
   "description": "The idea of the exercise is to solve the following problem, we don't expect it to take longer than two hours and all the data/tools should be available. Things we're looking for are:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "test": "jest",
     "start": "node src/index.js"
   },
   "repository": {
@@ -22,5 +23,8 @@
     "axios": "1.10.0",
     "jest": "30.0.0",
     "zod": "3.25.67"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3"
   }
 }
