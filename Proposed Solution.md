@@ -63,8 +63,9 @@ b0ec94b6-ca15-4fb2-9ec7-7017f43080f4
 - Using TypeScript would improve type safety and make the code easier to maintain. We could define interfaces for house, heat-pumps, and weather data.
 - Improve error handling - potentially using throw error incorrectly and/or to much.
 - In heatPumpSelection we iterate over all hest pumps, if this list is large it could be an expensive operation. We could consider ordering this data and then we could better filter over a smaller set of data.
-- If house data and heat pumps list grew significantly we would need to consider batching requests or using some type of stream process.
+- If house data and heat pumps list grew significantly we could consider batching requests to reduce transfer size and vulnerability to network outages.
 - We could benefit from caching results from the weather api for the design region.
+- Tests in some cases are heavily mocked - which in my opinion are slightly confusing. Maybe we can simplify our testing which in turn would feed back into improving the solutions iteratively.
 
 
 ### Assumptions
