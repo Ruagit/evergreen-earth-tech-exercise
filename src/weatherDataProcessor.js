@@ -1,6 +1,5 @@
 const axios = require('axios');
 const { weatherResponseSchema } = require('./typeChecks');
-const { parsed } = require('yargs');
 
 const fetchWeatherData = async (API_URL, API_KEY, designRegion) => {
   try {
@@ -19,6 +18,7 @@ const fetchWeatherData = async (API_URL, API_KEY, designRegion) => {
           JSON.stringify(parsedLocationData.error)
       );
     }
+ 
     return parsedLocationData.data;
   } catch (error) {
     if (

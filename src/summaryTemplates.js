@@ -38,7 +38,7 @@ const errorSummaryTemplate = (
   console.log('--------------------------------------');
   console.log(' ');
   console.log(`Heating Loss: ${heatingLosskWhTotal}`);
-  console.log(`Warning: ${errorMessage}`);
+  console.log(`${errorMessage}`);
   console.log(' ');
 };
 

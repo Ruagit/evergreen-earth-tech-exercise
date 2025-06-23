@@ -41,7 +41,7 @@ describe('heatPumpSelection', () => {
 describe('totalCost', () => {
   const heatPump = {
     costs: [
-      { label: 'supply and installation of A', cost: 100 },
+      { label: 'supply and installation of pump A', cost: 100 },
       { label: 'design & supply of heat pump A', cost: 200 },
     ],
   };
